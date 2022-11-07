@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="pedido" />
         <module name="config-server" />
+        <module name="md-usuario" />
         <module name="produto" />
         <module name="eureka-server" />
       </profile>
@@ -18,8 +19,10 @@
       <module name="demo" target="17" />
       <module name="eureka-server" target="19" />
       <module name="Marketplace" target="19" />
+      <module name="md-login" target="19" />
       <module name="md-pedido" target="19" />
       <module name="md-produto" target="19" />
+      <module name="md-usuario" target="19" />
       <module name="pedido" target="19" />
       <module name="produto" target="19" />
     </bytecodeTargetLevel>
@@ -30,8 +33,10 @@
       <module name="config-server" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="md-login" options="-parameters" />
       <module name="md-pedido" options="-parameters" />
       <module name="md-produto" options="-parameters" />
+      <module name="md-usuario" options="-parameters" />
       <module name="pedido" options="-parameters" />
       <module name="produto" options="-parameters" />
     </option>
