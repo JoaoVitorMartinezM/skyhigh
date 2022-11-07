@@ -10,10 +10,8 @@
         <module name="md-produto" />
         <module name="config-server" />
         <module name="Marketplace" />
-        <module name="produto" />
-        <module name="md-pedido" />
-        <module name="pedido" />
         <module name="eureka-server" />
+        <module name="md-pedido" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,8 +20,6 @@
       <module name="Marketplace" target="19" />
       <module name="md-pedido" target="19" />
       <module name="md-produto" target="19" />
-      <module name="pedido" target="19" />
-      <module name="produto" target="19" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -33,8 +29,6 @@
       <module name="eureka-server" options="-parameters" />
       <module name="md-pedido" options="-parameters" />
       <module name="md-produto" options="-parameters" />
-      <module name="pedido" options="-parameters" />
-      <module name="produto" options="-parameters" />
     </option>
   </component>
 </project>
