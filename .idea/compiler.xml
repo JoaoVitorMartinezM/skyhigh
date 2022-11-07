@@ -7,17 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="md-produto" />
-        <module name="config-server" />
-        <module name="Marketplace" />
-        <module name="produto" />
-        <module name="md-pedido" />
         <module name="pedido" />
+        <module name="config-server" />
+        <module name="produto" />
         <module name="eureka-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="config-server" target="19" />
+      <module name="demo" target="17" />
       <module name="eureka-server" target="19" />
       <module name="Marketplace" target="19" />
       <module name="md-pedido" target="19" />
@@ -30,6 +28,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Marketplace" options="-parameters" />
       <module name="config-server" options="-parameters" />
+      <module name="demo" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="md-pedido" options="-parameters" />
       <module name="md-produto" options="-parameters" />
