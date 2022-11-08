@@ -22,7 +22,7 @@
       <module name="md-login" target="19" />
       <module name="md-pedido" target="19" />
       <module name="md-produto" target="17" />
-      <module name="md-usuario" target="19" />
+      <module name="md-usuario" target="17" />
       <module name="pedido" target="19" />
       <module name="produto" target="19" />
     </bytecodeTargetLevel>

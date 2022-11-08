@@ -9,4 +9,4 @@ spring:
       server:
         git:
           uri: https://github.com/JoaoVitorMartinezM/configurations
-          search-paths: pedido, produto
+          search-paths: pedido, produto, login
