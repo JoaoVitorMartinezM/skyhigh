@@ -10,7 +10,6 @@
         <module name="pedido" />
         <module name="md-produto" />
         <module name="config-server" />
-        <module name="md-usuario" />
         <module name="eureka-server" />
       </profile>
     </annotationProcessing>
