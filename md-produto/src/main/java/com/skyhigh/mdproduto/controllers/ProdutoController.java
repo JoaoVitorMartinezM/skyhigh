@@ -15,9 +15,10 @@ public class ProdutoController {
     @Autowired
     private ProdutoService service;
 
-    @GetMapping(value = "/", name = "Produtos")
-    public List<Produto> get(){
-        return service.findAll();
+    @GetMapping(value = "/produto", name = "Produtos")
+    public String get(){
+        return "Teste.html";
+//        return service.findAll();
     }
 
     @GetMapping(value = "/{id}", name = "Produtos")

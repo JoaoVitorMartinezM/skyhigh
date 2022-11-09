@@ -12,6 +12,7 @@
         <module name="config-server" />
         <module name="md-usuario" />
         <module name="eureka-server" />
+        <module name="demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
