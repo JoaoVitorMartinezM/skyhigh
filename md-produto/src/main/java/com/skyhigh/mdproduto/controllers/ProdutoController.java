@@ -16,9 +16,8 @@ public class ProdutoController {
     private ProdutoService service;
 
     @GetMapping(value = "/produto", name = "Produtos")
-    public String get(){
-        return "Teste.html";
-//        return service.findAll();
+    public List<Produto> get(){
+        return service.findAll();
     }
 
     @GetMapping(value = "/{id}", name = "Produtos")
