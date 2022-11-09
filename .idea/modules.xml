@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/md-produto/md-produto.iml" filepath="$PROJECT_DIR$/md-produto/md-produto.iml" />
-      <module fileurl="file://$PROJECT_DIR$/md-usuario/md-usuario.iml" filepath="$PROJECT_DIR$/md-usuario/md-usuario.iml" />
       <module fileurl="file://$PROJECT_DIR$/md-pedido/pedido.iml" filepath="$PROJECT_DIR$/md-pedido/pedido.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/skyhigh.iml" filepath="$PROJECT_DIR$/.idea/skyhigh.iml" />
     </modules>
