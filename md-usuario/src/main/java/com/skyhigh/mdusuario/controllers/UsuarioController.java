@@ -21,7 +21,7 @@ public class UsuarioController {
         return service.findAll();
     }
 
-    @GetMapping(value = "/{id}", name = "Usuarios")
+    @GetMapping(value = "/id{id}", name = "Usuarios")
     public Usuario getById(@RequestParam String id){
         return service.getById(id);
     }
@@ -31,12 +31,12 @@ public class UsuarioController {
         return service.save(usuario);
     }
 
-    @PutMapping(value = "/edita/{id}", name = "EditaUsuario")
+    @PutMapping(value = "/edita/id{id}", name = "EditaUsuario")
     public Usuario put(@RequestBody Usuario usuario){
         return service.edit(usuario.getNome(), usuario);
     }
 
-    @DeleteMapping(value = "/deleta/{id}", name = "DeletaUsuario")
+    @DeleteMapping(value = "/deleta/id{id}", name = "DeletaUsuario")
     public boolean delete(@RequestParam String id){
         return service.delete(id);
     }

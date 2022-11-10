@@ -20,7 +20,7 @@ public class ProdutoController {
         return service.findAll();
     }
 
-    @GetMapping(value = "/{id}", name = "Produtos")
+    @GetMapping(value = "/id{id}", name = "Produtos")
     public Produto recuperarPorId(@RequestParam Long id){
         return service.getById(id);
     }
@@ -30,12 +30,12 @@ public class ProdutoController {
         return service.save(produto);
     }
 
-    @PutMapping(value = "/edita/{id}", name = "EditaProduto")
+    @PutMapping(value = "/edita/id{id}", name = "EditaProduto")
     public Produto editar(@RequestParam Long id, @RequestBody Produto produto){
         return service.edit(id, produto);
     }
 
-    @DeleteMapping(value = "/deleta/{id}", name = "DeletaProduto")
+    @DeleteMapping(value = "/deleta/id{id}", name = "DeletaProduto")
     public boolean deletar(@RequestParam Long id){
         return service.delete(id);
     }
