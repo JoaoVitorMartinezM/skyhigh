@@ -1,4 +1,4 @@
-package com.skyhigh.mdusuario.models;
+package com.skyhigh.mdusuariocluster.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

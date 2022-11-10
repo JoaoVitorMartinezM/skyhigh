@@ -1,8 +1,8 @@
-package com.skyhigh.mdusuario.controllers;
+package com.skyhigh.mdusuariocluster.controllers;
 
 
-import com.skyhigh.mdusuario.models.Usuario;
-import com.skyhigh.mdusuario.services.UsuarioService;
+import com.skyhigh.mdusuariocluster.models.Usuario;
+import com.skyhigh.mdusuariocluster.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -11,6 +11,8 @@
         <module name="config-server" />
         <module name="md-usuario" />
         <module name="pedido" />
+        <module name="gateway-server" />
+        <module name="md-usuario (1)" />
         <module name="eureka-server" />
         <module name="demo" />
       </profile>
@@ -19,11 +21,13 @@
       <module name="config-server" target="19" />
       <module name="demo" target="17" />
       <module name="eureka-server" target="19" />
+      <module name="gateway-server" target="17" />
       <module name="Marketplace" target="19" />
       <module name="md-login" target="19" />
       <module name="md-pedido" target="19" />
       <module name="md-produto" target="17" />
       <module name="md-usuario" target="17" />
+      <module name="md-usuario (1)" target="17" />
       <module name="pedido" target="19" />
       <module name="pedido (1)" target="19" />
       <module name="produto" target="19" />
@@ -35,10 +39,12 @@
       <module name="config-server" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
       <module name="md-login" options="-parameters" />
       <module name="md-pedido" options="-parameters" />
       <module name="md-produto" options="-parameters" />
       <module name="md-usuario" options="-parameters" />
+      <module name="md-usuario (1)" options="-parameters" />
       <module name="pedido" options="-parameters" />
       <module name="pedido (1)" options="-parameters" />
       <module name="produto" options="-parameters" />

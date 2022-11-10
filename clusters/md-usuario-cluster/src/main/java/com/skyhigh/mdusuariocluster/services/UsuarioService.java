@@ -1,7 +1,7 @@
-package com.skyhigh.mdusuario.services;
+package com.skyhigh.mdusuariocluster.services;
 
-import com.skyhigh.mdusuario.models.Usuario;
-import com.skyhigh.mdusuario.repositories.UsuarioRepo;
+import com.skyhigh.mdusuariocluster.models.Usuario;
+import com.skyhigh.mdusuariocluster.repositories.UsuarioRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

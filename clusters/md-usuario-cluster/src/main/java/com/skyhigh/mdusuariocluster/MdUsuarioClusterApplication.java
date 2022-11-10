@@ -1,4 +1,4 @@
-package com.skyhigh.mdusuario;
+package com.skyhigh.mdusuariocluster;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class MdUsuarioApplication {
+public class MdUsuarioClusterApplication {
 
     @Bean
     @LoadBalanced
@@ -17,7 +17,7 @@ public class MdUsuarioApplication {
 
 
     public static void main(String[] args) {
-        SpringApplication.run(MdUsuarioApplication.class, args);
+        SpringApplication.run(MdUsuarioClusterApplication.class, args);
     }
 
 }

@@ -3,12 +3,15 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/clusters/md-pedido-cluster/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/clusters/md-pedido-cluster/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/clusters/md-usuario-cluster/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/clusters/md-usuario-cluster/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config-server/md-login/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/md-pedido/demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/md-pedido/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/md-pedido/src/main/resources" charset="UTF-8" />
