@@ -4,6 +4,7 @@ import com.skyhigh.mdproduto.models.Produto;
 import com.skyhigh.mdproduto.services.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -38,5 +39,11 @@ public class ProdutoController {
     @DeleteMapping(value = "/deleta/id{id}", name = "DeletaProduto")
     public boolean deletar(@RequestParam Long id){
         return service.delete(id);
+    }
+
+    @GetMapping(value = "/teste")
+    public ModelAndView teste(){
+        ModelAndView model  =new ModelAndView("/cadastro-produtos.html");
+        return model;
     }
 }

@@ -1,15 +1,17 @@
-package com.skyhigh.mdusuario.controllers;
+package com.skyhigh.usuario.controller;
 
 
 import com.skyhigh.mdusuario.models.Usuario;
 import com.skyhigh.mdusuario.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
 @RestController
+@Controller
 @RequestMapping(value = "/usuario", name = "Usuario")
 public class UsuarioController {
 
@@ -39,5 +41,10 @@ public class UsuarioController {
     @DeleteMapping(value = "/deleta/id{id}", name = "DeletaUsuario")
     public boolean delete(@RequestParam String id){
         return service.delete(id);
+    }
+
+    @GetMapping(value = "/teste")
+    public String teste(){
+        return "teste";
     }
 }

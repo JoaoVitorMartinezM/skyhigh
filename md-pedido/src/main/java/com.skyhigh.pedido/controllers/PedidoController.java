@@ -41,4 +41,5 @@ public class PedidoController {
     public boolean deletar(@RequestParam Long id){
         return service.delete(id);
     }
+
 }
