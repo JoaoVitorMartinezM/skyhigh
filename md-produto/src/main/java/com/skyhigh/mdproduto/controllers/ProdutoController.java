@@ -3,13 +3,15 @@ package com.skyhigh.mdproduto.controllers;
 import com.skyhigh.mdproduto.models.Produto;
 import com.skyhigh.mdproduto.services.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 
-@RestController
+@Controller
 @RequestMapping(value = "/produto", name = "Produto")
 public class ProdutoController {
 
@@ -17,8 +19,16 @@ public class ProdutoController {
     private ProdutoService service;
 
     @GetMapping(value = "/", name = "Produtos")
-    public List<Produto> recuperar(){
-        return service.findAll();
+    public String recuperar(ModelMap model){
+        List<Produto> produtos = service.findAll();
+        model.addAttribute("produtos" , produtos);
+        return "meus-produtos";
+    }
+    @GetMapping(value = "/form/edita/id{id}", name = "Produtos")
+    public String formularioEdicao(@RequestParam Long id, ModelMap model){
+        Produto produto = service.getById(id);
+        model.addAttribute("produto" , produto);
+        return "edita-produto";
     }
 
     @GetMapping(value = "/id{id}", name = "Produtos")
@@ -26,24 +36,40 @@ public class ProdutoController {
         return service.getById(id);
     }
 
+    @GetMapping(value = "/form", name = "Produtos")
+    public String formulario(){
+        return "cadastro-produto";
+    }
+
     @PostMapping(value = "/novo", name = "NovoProduto")
-    public Produto salvar(@RequestBody Produto produto){
-        return service.save(produto);
+    public String salvar(@RequestParam String nome,Double preco, String urlImagem, String descricao){
+        Produto produto = new Produto();
+        produto.setNome(nome);
+        produto.setPreco(preco);
+        produto.setDescricao(descricao);
+        produto.setUrlImagem(urlImagem);
+        service.save(produto);
+        return "cadastro-produto";
     }
 
     @PutMapping(value = "/edita/id{id}", name = "EditaProduto")
-    public Produto editar(@RequestParam Long id, @RequestBody Produto produto){
-        return service.edit(id, produto);
+    public String editar(@RequestParam Long id, String nome,Double preco, String urlImagem, String descricao){
+        Produto produto = new Produto();
+        produto.setNome(nome);
+        produto.setPreco(preco);
+        produto.setDescricao(descricao);
+        produto.setUrlImagem(urlImagem);
+        Produto produtoEditado = service.edit(id, produto);
+
+        return "meus-produtos";
     }
 
     @DeleteMapping(value = "/deleta/id{id}", name = "DeletaProduto")
-    public boolean deletar(@RequestParam Long id){
-        return service.delete(id);
+    public String deletar(@RequestParam Long id){
+        service.delete(id);
+
+        return "meus-produtos";
     }
 
-    @GetMapping(value = "/teste")
-    public ModelAndView teste(){
-        ModelAndView model  =new ModelAndView("/cadastro-produtos.html");
-        return model;
-    }
+
 }

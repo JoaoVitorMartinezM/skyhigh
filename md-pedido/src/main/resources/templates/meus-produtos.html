@@ -1,23 +1,22 @@
 <html>
-<head th:fragment="head">
-<meta charset="UTF-8" />
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-	crossorigin="anonymous"></script>
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-	crossorigin="anonymous"></script>
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		  crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"></script>
+	<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			crossorigin="anonymous"></script>
+	<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+			crossorigin="anonymous"></script>
 </head>
-
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,37 +70,43 @@ button{
 					<li class="nav-item active"><a class="nav-link" href="#">Meus
 							Pedidos</a></li>
 				</ul>
+			</div>
 		</nav>
-		<a href="/cadastro-produto"><button
-				class="btn btn-primary my-2 my-sm-0 float-right"">Novo
+		<a href="/produto/teste"><button formmethod="post"
+				class="btn btn-primary my-2 my-sm-0 float-right">Novo
 				Produto</button></a>
 	</nav>
 <body>
-	<div class="container">
+<th:block th:each="produto : ${produtos}">
+	<div class="container mb-3" >
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="card d-flex p-2 bd-highlight">
-					<div
-						class="card-body text-white d-flex justify-content-center rounded"
-						style="background-color: #003594;">
-						<h2>Xbox Series X</h2>
-					</div>
+
+					<h2>
+						<div
+							th:field="*{produto.getNome()}" th:text="${produto.getNome()}" class="card-body text-white d-flex justify-content-center rounded"
+							style="background-color: #003594;">
+
+						</div>
+					</h2>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12 col-sm-8 mb-3">
 								<div class="row ">
-									<img class="img-thumbnail border-0" height="520" width="520"
-										src="https://static.nagem.com.br/util/artefatos/produtos/m/n/812031600888847/525324.jpg" />
+									<img class="img-thumbnail border-0" height="520" width="520" th:src="${produto.getUrlImagem()}" src="" />
+									
 								</div>
 
-								<div></div>
 							</div>
 							<div class="card-body col-6 col-sm-4">
-								<div class="text-primary">
-									<h1>R$5.000,00</h1>
-								</div>
+								<h1>
+									<div th:field="*{produto.getPreco()}" th:text="${produto.preco}" name="preco" class="text-primary">
+
+									</div>
+								</h1>
 								<textarea class="form-control col-11 border-0"
-									th:text="${pedido.descricao}">Descrição do Pedido</textarea>
+									th:text="${produto.descricao}">Descrição do Pedido</textarea>
 							</div>
 							<div class="mt-4 card-body">
 								<button type="submit" class="btn btn-success float-right">Editar</button>
@@ -109,10 +114,12 @@ button{
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
+</th:block>
 </body>
 
 </html>

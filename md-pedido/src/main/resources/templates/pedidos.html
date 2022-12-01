@@ -1,0 +1,88 @@
+<html>
+<head th:replace="˜(base :: head)"></head>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+	rel="stylesheet">
+<style>
+
+.logo-container {
+	background-color: #003594;
+	color: #FFF;
+}
+
+.logo {
+	font-family: 'Poppins', sans-serif;
+	font-size: 2.5rem;
+}
+
+body{
+
+background-color: #CCCCCC;
+
+}
+</style>
+
+<body>
+
+
+	<div class="logo-container p-3 d-flex justify-content-between">
+		<span class="logo">SkyHigh</span> <span class="mt-3">Login</span>
+	</div>
+
+	<nav class="navbar navbar-light d-flex justify-content-center mb-5 "
+		style="background-color: #FFB81C;">
+		<nav class="navbar navbar-expand-lg">
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#textoNavbar" aria-controls="textoNavbar"
+				aria-expanded="false" aria-label="Alterna navegação">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="textoNavbar">
+				<ul class="navbar-nav mr-auto">
+					<a><li class="nav-item active"><a class="nav-link"
+							href="/home">Início</a> <span class="sr-only">(Página
+								atual)</span></a>
+					</li>
+					<li class="nav-item active"><a class="nav-link" href="#">Meus Produtos</a>
+					</li>
+					<li class="nav-item active"><a class="nav-link" href="#">Meus Pedidos</a></li>
+				</ul>
+		</nav>
+		<a href="/cadastro-produto"><button
+				class="btn btn-primary my-2 my-sm-0 float-right"">Novo
+				Produto</button></a>
+	</nav>
+<body>
+		<div class="container">
+		<div class="row">
+        <div class="col-sm-12">
+			<div th:field="*{nome}" class="card d-flex p-2 bd-highlight">
+				<div class="card-body text-white d-flex justify-content-center rounded" style="background-color: #003594;"><h3></h3></div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-12 col-sm-8 mb-3">
+							<div class="row ">
+								<img class="img-thumbnail border-0" height="180" width="180" th:src="${urlImagem}" src="" />
+							</div>
+							
+							<div>
+								
+							</div>
+						</div>
+						<div class="card-body col-10 col-sm-4">
+						<div th:field="*{preco}" th:text="${preco} class="text-primary">Preço<h2></h2></div>
+							<textarea th:text="${descricao}" class="form-control col-11 border-0" th:text="${pedido.descricao}">Descrição do Pedido</textarea>
+					</div>
+				</div>
+			</div>
+			</div>
+			</div>
+		</div>
+	</body>
+
+</html>

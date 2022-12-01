@@ -1,4 +1,4 @@
-<html>
+<html xmlns:form="http://www.w3.org/1999/html">
 <head>
 	<meta charset="UTF-8" />
 	<link rel="stylesheet"
@@ -90,34 +90,34 @@ button{
 
 									<div>
 
-										<form action="/produto/novo" method="POST">
+										<form action="#" th:action="@{'/produto/edita/id?id={id}'(id=${produto.getId()})}" th:method="put">
+											<div th:field="*{produto.getId()}" th:text="${produto.getId()}" hidden name="id"  class="text-primary">
+											</div>
+
 											<div>Nome do Produto</div>
 											<div>
 												<label for="nome"></label>
-												<input id="nome" name="nome" class="form-control mb-4"
-													placeholder="Insira o nome do produto">
+												<input id="nome" name="nome" th:value="${produto.getNome()}" class="form-control mb-4"/>
 											</div>
 											<div>Valor</div>
-											<div>
-												<label for="preco"></label>
-												<input id="preco" name="preco" class="form-control mb-4"
-													placeholder="Insira o valor do produto">
-											</div>
+												<div>
+													<label for="preco"></label>
+													<input id="preco" name="preco" th:value="${produto.getPreco()}" class="form-control mb-4"/>
+												</div>
 											<div>URL da Imagem</div>
 											<div>
 												<label for="urlImagem"></label>
-												<input id="urlImagem" name="urlImagem" class="form-control mb-4"
-													placeholder="Insira a URL da imagem">
+												<input id="urlImagem" name="urlImagem" th:value="${produto.getUrlImagem()}" class="form-control mb-4"/>
 											</div>
+
 											<div>Descrição</div>
-											<div>
-											<label for="descricao"></label>
-												<textarea id="descricao"  name="descricao" class="form-control mb-5"
-													placeholder="Descreva as informações do produto aqui !"></textarea>
-											</div>
+												<div>
+													<label for="descricao"></label>
+													<input id="descricao" name="descricao" th:value="${produto.getDescricao()}" class="form-control mb-4"/>
+												</div>
 											<div class="mt-4">
-											<button type="submit" class="btn btn-success float-right" >Enviar</button>
-											<button type="reset" class="btn btn-danger float-right">Limpar</button>
+												<button type="submit" class="btn btn-success float-right" >Editar</button>
+												<button type="reset" class="btn btn-danger float-right">Limpar</button>
 											</div>
 										</form>
 									</div>

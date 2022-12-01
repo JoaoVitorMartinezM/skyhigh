@@ -1,22 +1,5 @@
 <html>
-<head th:fragment="head">
-<meta charset="UTF-8" />
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-	crossorigin="anonymous"></script>
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-	crossorigin="anonymous"></script>
-</head>
+<head th:replace="˜(base :: head)"></head>
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,7 +56,7 @@ button{
 			Produto</button>
 	</nav>
 
-			<form action="..." method="POST">
+			<form action="/produto/novo-produto" method="POST">
 
 				<div class="card-body">
 					<div class="container">
@@ -89,14 +72,16 @@ button{
 
 									<div>Nome do Produto</div>
 									<div>
-										<input name="nomeProduto" class="form-control mb-4"
+									    <label for="nome"></label>
+										<input th:field="*{nome}" name="nome" class="form-control mb-4"
 											placeholder="Insira o nome do produto">
 									</div>
 
 
 									<div>Valor</div>
 									<div>
-										<input name="valor" class="form-control mb-4"
+								     	<label for="preco"></label>
+										<input th:field="*{preco}" name="preco" class="form-control mb-4"
 											placeholder="Insira o valor do produto">
 									</div>
 
@@ -105,14 +90,16 @@ button{
 
 									<div>URL da Imagem</div>
 									<div>
-										<input name="url_imagem" class="form-control mb-4"
+								     	<label for="urlImagem"></label>
+										<input th:field="*{urlImagem}" name="urlImagem" class="form-control mb-4"
 											placeholder="Insira a URL da imagem">
 									</div>
 
 
 									<div>Descrição</div>
 									<div>
-										<textarea name="descricao" class="form-control mb-5"
+									<label for="descricao"></label>
+										<textarea th:field="*{descricao}" name="descricao" class="form-control mb-5"
 											placeholder="Descreva as informações do produto aqui !"></textarea>
 									</div>
 									<div class="mt-4">
