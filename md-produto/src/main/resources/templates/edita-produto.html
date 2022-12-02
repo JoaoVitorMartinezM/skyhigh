@@ -61,8 +61,8 @@ button{
 			<div class="collapse navbar-collapse" id="textoNavbar">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
-													  href="/home">Início</a></li>
-						<li class="nav-item active"><a class="nav-link" href="#">Meus
+													  href="/produto/">Início</a></li>
+						<li class="nav-item active"><a class="nav-link" href="/produto/">Meus
 							Produtos</a></li>
 						<li class="nav-item active"><a class="nav-link" href="#">Meus
 							Pedidos</a></li>
@@ -85,7 +85,7 @@ button{
 									<div
 										class="card-body text-white d-flex mb-5 justify-content-center rounded"
 										style="background-color: #003594;">
-										<h2>Novo Produto</h2>
+										<h2>Editando Produto</h2>
 									</div>
 
 									<div>
@@ -116,7 +116,7 @@ button{
 													<input id="descricao" name="descricao" th:value="${produto.getDescricao()}" class="form-control mb-4"/>
 												</div>
 											<div class="mt-4">
-												<button type="submit" class="btn btn-success float-right" >Editar</button>
+												<button type="submit" class="btn btn-success float-right" >Salvar</button>
 												<button type="reset" class="btn btn-danger float-right">Limpar</button>
 											</div>
 										</form>
