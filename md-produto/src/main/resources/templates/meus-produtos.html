@@ -117,12 +117,17 @@
 								</div>
 								<div class="mt-4 card-body">
 									<div>
-										<form action="#" th:action="@{'/produto/form/edita/id?id={id}'(id=${produto.getId()})}" th:method="get" >
-											<button class="btn btn-success float-right" >Editar</button>
+
+										<form action="#" th:action="@{'/produto/form/edita/{id}'(id=${produto.getId()})}" th:method="get" >
+											<button th:method="get" class="btn btn-success float-right" >Editar</button>
 										</form>
+									</div>
+
+									<div>
 										<form action="#" th:action="@{'/produto/deleta/id?id={id}'(id=${produto.getId()})}" th:method="delete" >
 											<button th:method="delete" class="btn btn-danger float-right" >Excluir</button>
 										</form>
+
 									</div>
 								</div>
 							</div>

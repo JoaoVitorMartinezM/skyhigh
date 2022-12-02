@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 
@@ -24,8 +25,8 @@ public class ProdutoController {
         model.addAttribute("produtos" , produtos);
         return "meus-produtos";
     }
-    @GetMapping(value = "/form/edita/id{id}", name = "Produtos")
-    public String formularioEdicao(@RequestParam Long id, ModelMap model){
+    @GetMapping(value = "/form/edita/{id}", name = "Produtos")
+    public String formularioEdicao(@PathVariable Long id, ModelMap model){
         Produto produto = service.getById(id);
         model.addAttribute("produto" , produto);
         return "edita-produto";
@@ -53,13 +54,16 @@ public class ProdutoController {
     }
 
     @PutMapping(value = "/edita/id{id}", name = "EditaProduto")
-    public String editar(@RequestParam Long id, String nome,Double preco, String urlImagem, String descricao){
+    public String editar(@RequestParam Long id, String nome,Double preco, String urlImagem, String descricao, ModelMap model){
         Produto produto = new Produto();
         produto.setNome(nome);
         produto.setPreco(preco);
         produto.setDescricao(descricao);
         produto.setUrlImagem(urlImagem);
-        Produto produtoEditado = service.edit(id, produto);
+        service.edit(id, produto);
+
+        List<Produto> produtos = service.findAll();
+        model.addAttribute("produtos", produtos);
 
         return "meus-produtos";
     }
