@@ -1,5 +1,5 @@
 <html>
-<head>
+<head th:fragment = "head">
 	<meta charset="UTF-8" />
 	<link rel="stylesheet"
 		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -22,88 +22,123 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
-	href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-	rel="stylesheet">
+		href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+		rel="stylesheet">
 <style>
+	.currSign:before {
+		content: 'R$';
+	}
 
-.logo-container {
-	background-color: #003594;
-	color: #FFF;
-}
+	.logo-container {
+		background-color: #003594;
+		color: #FFF;
+	}
 
-.logo {
-	font-family: 'Poppins', sans-serif;
-	font-size: 2.5rem;
-}
+	.logo {
+		font-family: 'Poppins', sans-serif;
+		font-size: 2.5rem;
+	}
 
-body{
+	body {
+		background-color: #CCCCCC;
+	}
 
-background-color: #CCCCCC;
-
-}
+	button {
+		margin: 0 15px;
+	}
 </style>
 
+
 <body>
 
 
-	<div class="logo-container p-3 d-flex justify-content-between">
-		<span class="logo">SkyHigh</span> <span class="mt-3">Login</span>
-	</div>
+<div class="logo-container p-3 d-flex justify-content-between">
+	<span class="logo">SkyHigh</span> <span class="mt-3">Login</span>
+</div>
 
-	<nav class="navbar navbar-light d-flex justify-content-center mb-5 "
-		style="background-color: #FFB81C;">
-		<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-light d-flex justify-content-center mb-5 "
+	 style="background-color: #FFB81C;">
+	<nav class="navbar navbar-expand-lg">
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#textoNavbar" aria-controls="textoNavbar"
 				aria-expanded="false" aria-label="Alterna navegação">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="textoNavbar">
-				<ul class="navbar-nav mr-auto">
-					<a><li class="nav-item active"><a class="nav-link"
-							href="/home">Início</a> <span class="sr-only">(Página
-								atual)</span></a>
-					</li>
-					<li class="nav-item active"><a class="nav-link" href="#">Meus Produtos</a>
-					</li>
-					<li class="nav-item active"><a class="nav-link" href="#">Meus Pedidos</a></li>
-				</ul>
-		</nav>
-		<a href="/cadastro-produto"><button
-				class="btn btn-primary my-2 my-sm-0 float-right"">Novo
-				Produto</button></a>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="textoNavbar">
+			<ul class="navbar-nav mr-auto">
+				<a>
+					<li class="nav-item active"><a class="nav-link"
+												   href="/produto/home">Início</a> <span class="sr-only">(Página
+								atual)</span>
+				</a>
+				</li>
+				<li class="nav-item active"><a class="nav-link" href="/produto/">Meus
+					Produtos</a></li>
+				<li class="nav-item active"><a class="nav-link" href="/produto/pedidos">Meus
+					Pedidos</a></li>
+			</ul>
+			</div>
 	</nav>
+	<a href="/cadastro-produto"><button
+			class="btn btn-primary my-2 my-sm-0 float-right">Novo
+		Produto</button></a>
+</nav>
 <body>
-		<div class="container">
-		<div class="row">
-        <div class="col-sm-12">
+<th:block th:each="produto : ${produtos}">
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
 			<div class="card d-flex p-2 bd-highlight">
-				<div th:field="*{nome}" class="card-body text-white d-flex justify-content-center rounded" style="background-color: #003594;"><h2></h2></div>
+				<h2>
+					<div th:field="*{produto.getNome()}"
+						 th:text="${produto.getNome()}"
+						 class="card-body text-white d-flex justify-content-center rounded"
+						 style="background-color: #003594;">
+
+					</div>
+				</h2>
 				<div class="card-body">
 					<div class="row">
 						<div class="col-12 col-sm-8 mb-3">
 							<div class="row ">
-								<img class="img-thumbnail border-0" height="520" width="520" th:src="${urlImagem}" src="" />
+								<img class="img-thumbnail border-0" height="520" width="520"
+									 th:src="${produto.getUrlImagem()}" src="" />
 							</div>
-							
-							<div>
-								
+
+							<div></div>
+						</div>
+						<h1 class="text-primary">
+							<div class="preco-formatado" th:field="*{produto.getPreco()}"
+								 th:text="${produto.getPreco()}" name="preco">
 							</div>
-						</div>
-						<div class="card-body col-6 col-sm-4">
-						<div th:field="*{preco}" class="text-primary"><h1></h1></div>
-							<textarea class="form-control col-11 border-0" th:text="${descricao}">Descrição do Pedido</textarea>
-						</div>
-						<div class="card-body d-flex justify-content-end">
-						<button type="button" class="col-4 btn btn btn-success btn-lg btn-block">Comprar</button>
-						</div>
-					</div>
+						</h1>
+					<textarea class="form-control col-11 border-0"
+							  th:text="${produto.getDescricao()}">Descrição do Pedido</textarea>
+				</div>
+				<div class="card-body d-flex justify-content-end">
+					<button type="button"
+							class="col-4 btn btn btn-success btn-lg btn-block">Comprar</button>
 				</div>
 			</div>
-			</div>
-			</div>
 		</div>
-	</body>
-
+	</div>
+</div>
+</div>
+</div>
+</th:block>
+<body>
+<script>
+	let x = document
+			.querySelectorAll(".preco-formatado");
+	for (let i = 0, len = x.length; i < len; i++) {
+		let num = Number(
+				x[i].innerHTML)
+				.toLocaleString(
+						'pt');
+		x[i].innerHTML = num;
+		x[i].classList
+				.add("currSign");
+	}
+</script>
 </html>

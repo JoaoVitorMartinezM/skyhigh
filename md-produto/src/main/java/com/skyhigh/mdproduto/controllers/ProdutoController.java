@@ -3,13 +3,10 @@ package com.skyhigh.mdproduto.controllers;
 import com.skyhigh.mdproduto.models.Produto;
 import com.skyhigh.mdproduto.services.ProdutoService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 
@@ -26,6 +23,19 @@ public class ProdutoController {
         model.addAttribute("produtos" , produtos);
         return "meus-produtos";
     }
+
+    @GetMapping(value = "/pedidos", name = "Produtos")
+    public String pedidos(){
+        return "pedidos";
+    }
+
+    @GetMapping(value = "/home", name = "Produtos")
+    public String home(ModelMap model){
+        List<Produto> produtos = service.findAll();
+        model.addAttribute("produtos" , produtos);
+        return "home";
+    }
+
     @GetMapping(value = "/form/edita/{id}", name = "Produtos")
     public String formularioEdicao(@PathVariable Long id, ModelMap model){
         Produto produto = service.getById(id);
