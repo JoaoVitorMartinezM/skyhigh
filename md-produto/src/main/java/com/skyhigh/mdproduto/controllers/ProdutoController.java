@@ -2,6 +2,7 @@ package com.skyhigh.mdproduto.controllers;
 
 import com.skyhigh.mdproduto.models.Produto;
 import com.skyhigh.mdproduto.services.ProdutoService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,10 +14,10 @@ import java.util.List;
 
 
 @Controller
+@AllArgsConstructor
 @RequestMapping(value = "/produto", name = "Produto")
 public class ProdutoController {
 
-    @Autowired
     private ProdutoService service;
 
     @GetMapping(value = "/", name = "Produtos")
@@ -69,8 +70,10 @@ public class ProdutoController {
     }
 
     @DeleteMapping(value = "/deleta/id{id}", name = "DeletaProduto")
-    public String deletar(@RequestParam Long id){
+    public String deletar(@RequestParam Long id, ModelMap model){
         service.delete(id);
+        List<Produto> produtos = service.findAll();
+        model.addAttribute("produtos" , produtos);
 
         return "meus-produtos";
     }

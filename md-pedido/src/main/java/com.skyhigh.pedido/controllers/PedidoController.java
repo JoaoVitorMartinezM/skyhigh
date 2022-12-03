@@ -4,12 +4,13 @@ package com.skyhigh.pedido.controllers;
 import com.skyhigh.mdproduto.models.Produto;
 import com.skyhigh.pedido.services.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
-@RestController
+@Controller
 @RequestMapping(value = "/pedido", name = "pedido")
 public class PedidoController {
 
@@ -18,6 +19,8 @@ public class PedidoController {
 
     @GetMapping(value = "/", name = "Pedidos")
     public List<Produto> recuperar(){
+        List<Produto> produtosPedido = service.findAll();
+
         return service.findAll();
     }
 

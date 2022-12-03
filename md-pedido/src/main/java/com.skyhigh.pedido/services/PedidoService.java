@@ -5,6 +5,7 @@ import com.skyhigh.pedido.client.PedidoClient;
 import com.skyhigh.pedido.repositories.PedidoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.ModelMap;
 
 import java.util.List;
 
